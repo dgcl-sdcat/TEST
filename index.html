@@ -38,6 +38,20 @@
             zoomControl:true, maxZoom:28, minZoom:1
         }).fitBounds([[40.720533196821314,-6.5485781376437],[51.91024603830664,14.817394299412324]]);
         var hash = new L.Hash(map);
+                   
+            map.createPane('pane_FonddecarteOSM_0');
+        map.getPane('pane_FonddecarteOSM_0').style.zIndex = 400;
+        var layer_FonddecarteOSM_0 = L.tileLayer('http://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            pane: 'pane_FonddecarteOSM_0',
+            opacity: 0.5,
+            attribution: '<a href="https://www.openstreetmap.org/copyright">© OpenStreetMap contributors, CC-BY-SA</a>',
+            minZoom: 1,
+            maxZoom: 28,
+            minNativeZoom: 0,
+            maxNativeZoom: 19
+        });
+        layer_FonddecarteOSM_0;
+        map.addLayer(layer_FonddecarteOSM_0);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         var bounds_group = new L.featureGroup([]);
